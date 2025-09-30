@@ -1,0 +1,140 @@
+/* Style général */
+
+body, html {
+  margin: 0;
+  padding: 0;
+  color: white;
+  background-color: black;
+  font-family: Arial, sans-serif;
+  height: 100%;
+}
+
+/* Explosion plein écran */
+#explosion {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: radial-gradient(circle, #000000 0%, #000 70%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  overflow: hidden;
+}
+
+/* Particules */
+.particle {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 50%;
+  box-shadow: 0 0 10px #000000;
+  animation: explode 1.2s ease-out forwards;
+}
+
+@keyframes explode {
+  from {
+    transform: translate(0, 0) scale(1);
+    opacity: 1;
+  }
+  to {
+    transform: translate(var(--x), var(--y)) scale(0.5);
+    opacity: 0;
+  }
+}
+
+/* Contenu du site (caché au début) */
+#content {
+  opacity: 0;
+  text-align: center;
+  margin-top: 20%;
+  transition: opacity 1s ease;
+}
+#content.show {
+  opacity: 1;
+}
+
+/* Section Projet */
+.project-showcase {
+  padding: 100px 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.project-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+  max-width: 1200px;
+  width: 100%;
+}
+
+/* Image du projet */
+.project-image {
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.1);
+}
+.project-image img {
+  width: 100%;
+  transition: transform 0.8s ease, filter 0.8s ease;
+}
+.project-image:hover img {
+  transform: scale(1.1);
+  filter: brightness(0.7) contrast(1.2);
+}
+
+/* Texte du projet */
+.project-text {
+  color: #fff;
+  animation: fadeInUp 1s ease forwards;
+  opacity: 0;
+}
+.project-text h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  background: linear-gradient(90deg, #fff, #666);
+  -webkit-text-fill-color: transparent;
+}
+.project-text p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 30px;
+  color: #aaa;
+}
+
+/* Bouton */
+.btn {
+  display: inline-block;
+  padding: 12px 30px;
+  background: transparent;
+  border: 2px solid #fff;
+  color: #fff;
+  font-size: 1rem;
+  text-decoration: none;
+  border-radius: 30px;
+  transition: all 0.3s ease;
+}
+.btn:hover {
+  background: #fff;
+  color: #000;
+  box-shadow: 0 0 20px #fff;
+}
+
+/* Animation apparition */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
