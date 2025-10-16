@@ -38,6 +38,14 @@ function animate() {
   requestAnimationFrame(animate);
 }
 
+if (/Mobi|Android/i.test(navigator.userAgent)) {
+  console.log("C’est un mobile !");
+  document.body.classList.add("mobile");
+} else {
+  console.log("C’est un ordinateur !");
+  document.body.classList.add("desktop");
+}
+
 animate();
 
 const video = document.querySelector('.background-video');
