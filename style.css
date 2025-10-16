@@ -32,6 +32,11 @@ body {
   }
 }
 
+img, video {
+  max-width: 100%;
+  height: auto;
+}
+
 .logo img {
   height: 60px; /* taille du logo */
   width: auto;  /* garde les proportions */
