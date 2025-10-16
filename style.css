@@ -8,6 +8,30 @@ body {
               linear-gradient(180deg, #0a0a1a, #000000);
 }
 
+@media (max-width: 600px) {
+  body {
+    font-size: 14px;
+  }
+  header, nav, footer {
+    padding: 10px;
+  }
+  .menu {
+    /* exemple : menu burger ou menu déroulant en mobile */
+    display: none; /* ou ton propre style pour mobile */
+  }
+  .hero-image {
+    width: 100%;
+    height: auto;
+  }
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+  .some-wide-element {
+    overflow-x: hidden; /* éviter le scroll horizontal */
+  }
+}
+
 .logo img {
   height: 60px; /* taille du logo */
   width: auto;  /* garde les proportions */
